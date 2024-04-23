@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      position: relative; /* Añadido para que el pie de página esté en la parte inferior */
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      height: 40px;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: space-between;
+      align-items: center;
+      padding: 35px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 150px;
+      margin-right: 10px;
+    }
+
+    nav a {
+      font-weight: 600;
+      padding-right: 10px;
+    }
+
+    nav a:hover {
+      color: rgb(255, 255, 1);
+    }
+
+    @media (max-width: 700px) {
+      header {
+          flex-direction: column;
+      }
+      nav {
+          padding: 5px 0px;
+      }
+    }
+
+    /* Estilos para el texto de bienvenida */
+    .bienvenido {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-family: 'Bangers', cursive; /* Aplicar la fuente Bangers */
+      font-size: 36px; /* Tamaño de la fuente */
+      text-align: center;
+      padding: 20px; /* Agregado para dar espacio al texto */
+      background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente negro */
+      border-radius: 10px; /* Borde redondeado */
+    }
+
+    /* Estilos para el pie de página */
+    footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: #333; /* Color de fondo del pie de página */
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHB1U8HlA7rLxTWRHcrGDbcbHCQbFeokf01xJjr7MJL74w6-fmzxZQYtr4XksZp9DiISqmKmyxxWxpNtf_UQYWL_p7S1XEiS5MXGVJFwoJUQlDw_Cti_Oj52TT-NigS0SqtwEVqt6Qx9sHJ82sfC6wO9WqfQdyfUvxyvjt8ImDFLuRKry8AXQPkSRN_Q/s555/outerspace-66.webp');">
+  <header>
+    <a href="../index.html" class="logo">
+      <img src="../images/descarga.png" alt="logo de la compañia">
+      <h2 class="nombre-empresa">Legend Collection</h2>
+    </a>
+    <nav>
+        <a href="OUR.HTML" class="nav-link">Our Collection</a>
+        <a href="about.html" class="nav-link">About us</a>
+        <a href="LOG IN.HTML" class="nav-link">Log in</a>
+    </nav>
+  </header>
+
+  <div class="bienvenido">Welcome back collector</div>
+
+  <footer>
+    © 2024 Legend Collection. All rights reserved.
+  </footer>
+</body>
+</html>

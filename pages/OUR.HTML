@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Collection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"> <!-- Cambiando la fuente a Bangers -->
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background-color: rgb(0, 0, 0); /* Cambio del fondo a negro */
+      background-image: url('../images/image (58).png');
+      background-size: cover;
+      background-position: center;
+      height: 220vh;
+    }
+
+
+    a {
+      text-decoration: none;
+      color: rgb(255, 254, 254);
+    }
+
+
+    header {
+      display: flex;
+      height: 40px;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: space-between;
+      align-items: center;
+      padding: 35px;
+    }
+
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+
+    .logo img {
+      height: 150px;
+      margin-right: 10px;
+    }
+
+
+    nav a {
+      font-weight: 600;
+      padding-right: 10px;
+    }
+
+
+    nav a:hover {
+      color: rgb(255, 255, 1);
+    }
+
+
+    @media (max-width: 700px) {
+      header {
+          flex-direction: column;
+      }
+      nav {
+          padding: 5px 0px;
+      }
+    }
+
+
+    .photo-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+
+    .photo {
+      flex: 0 0 calc(30% - 20px); /* Reduciendo el tamaño del contenedor y ajustando el margen */
+      margin: 10px; /* Reduciendo el margen exterior */
+      text-align: center;
+      background-color: gold;
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+
+    .photo:hover {
+      transform: scale(1.1);
+    }
+
+
+    .photo img {
+      width: 75%; /* Reduciendo el tamaño de la imagen */
+      height: auto;
+      display: block;
+      margin: 0 auto 20px; /* Margen superior e inferior y centrado horizontalmente */
+    }
+
+
+    .photo h4 {
+      font-family: 'Bangers', sans-serif; /* Cambio de la fuente a Bangers */
+      color: rgb(0, 0, 0); /* Cambio del color del texto a negro */
+      font-size: 24px; /* Tamaño de la fuente más grande */
+    }
+
+
+    .thumbnails {
+      display: flex;
+      justify-content: space-between;
+    }
+
+
+    .thumbnail {
+      width: 50px; /* Ajusta el tamaño de las miniaturas */
+      height: 50px; /* Ajusta el tamaño de las miniaturas */
+      margin-right: 5px;
+      cursor: pointer;
+    }
+
+
+    .thumbnail a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+
+    .thumbnail img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+
+    /* Estilos para el pie de página animado */
+    #footer-padre {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 10px;
+      animation: animateFooter 2s ease-in-out infinite alternate;
+    }
+
+
+    @keyframes animateFooter {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-20px);
+      }
+    }
+
+
+    /* Aplicar la animación a las letras */
+    h3 button {
+      width: 50px; /* Ajustar el ancho de los botones */
+      height: 50px; /* Ajustar el alto de los botones */
+      margin-right: 5px; /* Ajustar el margen derecho entre los botones */
+      cursor: pointer;
+      border-radius: 5px; /* Añadir bordes redondeados */
+      animation: rotateColors 3s linear infinite; /* Rotación de colores cada 3 segundos */
+    }
+
+
+    /* Rotación de colores */
+    @keyframes rotateColors {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(360deg); }
+    }
+
+
+    /* Aplicar colores del arcoíris según la letra */
+    h3 button:nth-child(1) { background-color: #ff0000; } /* Rojo */
+    h3 button:nth-child(2) { background-color: #ff7f00; } /* Naranja */
+    h3 button:nth-child(3) { background-color: #ffff00; } /* Amarillo */
+    h3 button:nth-child(4) { background-color: #00ff00; } /* Verde */
+    h3 button:nth-child(5) { background-color: #0000ff; } /* Azul */
+    h3 button:nth-child(6) { background-color: #4b0082; } /* Índigo */
+    h3 button:nth-child(7) { background-color: #9400d3; } /* Violeta */
+    /* Agrega más colores aquí si es necesario */
+
+
+    /* Estilos para el contenedor de video */
+    .video-container {
+      position: relative;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+
+    .video-container iframe {
+      width: 100%;
+      height: 400px; /* Ajusta la altura del video */
+      border: none;
+    }
+
+
+    /* Estilos para la línea dorada animada */
+    .gold-line-container {
+      width: 100%;
+      height: 20px; /* Altura de la línea */
+      overflow: hidden;
+    }
+
+
+    .gold-line {
+      position: relative;
+      width: 100%;
+      height: 2px; /* Grosor de la línea */
+      background-color: gold; /* Color de la línea */
+      animation: animateGoldLine 3s infinite linear; /* Animación de la línea dorada */
+    }
+
+
+    @keyframes animateGoldLine {
+      0% {
+        left: -100%;
+        width: 200%;
+      }
+      100% {
+        left: 100%;
+        width: 200%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../index.html" class="logo">
+      <img src="../images/descarga.png" alt="logo de la compañia">
+      <h2 class="nombre-empresa">Legend Collection</h2>
+    </a>
+    <nav>
+      <a href="OUR.HTML" class="nav-link">Our Collection</a>
+      <a href="about.html" class="nav-link">About us</a>
+      <a href="LOG IN.HTML" class="nav-link">Log in</a>
+    </nav>
+  </header>
+
+
+  <h3 style="text-align: center; margin-top: 20px;"></h3>
+
+
+  <div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/XLkLorXb_Hc?si=_k_Zo0TdiSaJ2Ytq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="gold-line-container">
+      <div class="gold-line"></div>
+    </div>
+  </div>
+
+
+  <div class="photo-container">
+    <!-- Tus fotos y productos van aquí -->
+    <div class="photo">
+      <h4>AQUAMAN</h4>
+      <img src="../images/aquaman.png" alt="Photo 1">
+      <div class="thumbnails">
+        <div class="thumbnail">
+          <a href="https://www.amazon.com.mx/FUNKO-POP-MOVIES-Aquaman-Hero/dp/B0B4YQJL56/ref=sr_1_1?__mk_es_MX=%C3%85M%C3%85%C5%BD%C3%95%C3%91&sr=8-1&ufe=app_do%3Aamzn1.fos.4e545b5e-1d45-498b-8193-a253464ffa47"><img src="../images/Amazon_icon.svg.webp" alt="Thumbnail 1"></a>
+        </div>
+        <div class="thumbnail">
+          <a href="https://www.ebay.es/itm/325880754998"
+          ><img src="../images/ebay-icon-logo-EA65D4EEE0-seeklogo.com.png" alt="Thumbnail 2"></a>
+        </div>
+        <div class="thumbnail">
+          <a href="https://www.mercadolibre.com.mx/funko-pop-movies-dc-aquaman-lost-kingdom-con-tridente-1301/p/MLM29378492?pdp_filters=category:MLM37525#searchVariation=MLM29378492&position=3&search_layout=stack&type=product&tracking_id=b768dd3b-3b28-4d39-bc10-752f51737c78
+          "><img src="../images/mercado-libre-logo-0233EC77C6-seeklogo.com.png" alt="Thumbnail 3"></a>
+        </div>
+      </div>
+    </div>
+    <div class="photo">
+      <h4>ALBUS DUMBLEDORE</h4>
+      <img src="../images/A MAGO.png" alt="Photo 2">
+      <div class="thumbnails">
+        <div class="thumbnail">
+          <a href="https://www.amazon.com.mx/Funko-Figura-Acci%C3%B3n-Movies-Dumbledore/dp/B00TQ4RXTW/ref=sr_1_3?__mk_es_MX=%C3%85M%C3%85%C5%BD%C3%95%C3%91&sr=8-3&ufe=app_do%3Aamzn1.fos.4e545b5e-1d45-498b-8193-a253464ffa47"><img src="../images/Amazon_icon.svg.webp" alt="Thumbnail 4"></a>
+        </div>
+        <div class="thumbnail">
+          <a href="https://www.ebay.com/itm/264844729485?_ul=CO">
+            <img src="../images/ebay-icon-logo-EA65D4EEE0-seeklogo.com.png" alt="Thumbnail 5"></a>
+        </div>
+        <div class="thumbnail">
+          <a href="https://articulo.mercadolibre.com.mx/MLM-1405873566-funko-pop-harry-potter-albus-dumbledore-04-_JM#position=26&search_layout=stack&type=item&tracking_id=5c86758a-1af8-4326-b52f-584dbcfc00a9"
+          ><img src="../images/mercado-libre-logo-0233EC77C6-seeklogo.com.png" alt="Thumbnail 6"></a>
+        </div>
+      </div>
+    </div>
+    <div class="photo">
+      <h4>ARIEL</h4>
+      <img src="../images/ARIEL.png" alt="Photo 3">
+      <div class="thumbnails">
+        <div class="thumbnail">
+          <a href="https://www.amazon.com.mx/Funko-Pop-Disney-Ultimate-Princess/dp/B08FMPBQJ1/ref=sr_1_1?__mk_es_MX=%C3%85M%C3%85%C5%BD%C3%95%C3%91&sr=8-1"><img src="../images/Amazon_icon.svg.webp" alt="Thumbnail 7"></a>
+        </div>
+        <div class="thumbnail">
+          <a href="https://www.ebay.com/itm/204458316273">
+            <img src="../images/ebay-icon-logo-EA65D4EEE0-seeklogo.com.png" alt="Thumbnail 8"></a>
+        </div>
+        <div class="thumbnail">
+          <a href="https://www.mercadolibre.com.mx/funko-pop-ariel-1012-princess/p/MLM20542144?pdp_filters=category:MLM37525#searchVariation=MLM20542144&position=6&search_layout=stack&type=product&tracking_id=76268f16-62bf-4046-9ae5-1a5b9ee2c293
+          "><img src="../images/mercado-libre-logo-0233EC77C6-seeklogo.com.png" alt="Thumbnail 9"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="photo-container">
+    <div class="photo">
+      <h4>ALICE</h4>
+      <img src="../images/wonder.png" alt="Photo 4">
+      <div class="thumbnails">
+        <div class="thumbnail">
+          <a href="https://www.amazon.com.mx/Funko-Pop-Deluxe-Wonderland-Flowers/dp/B08MQ2LPXW/ref=sr_1_2?__mk_es_MX=%C3%85M%C3%85%C5%BD%C3%95%C3%91&sr=8-2"><img src="../images/Amazon_icon.svg.webp" alt="Thumbnail 10"></a>
+        </div>
+        <div class="thumbnail">
+          <a href="https://www.ebay.com/itm/175884445925
+          "><img src="../images/ebay-icon-logo-EA65D4EEE0-seeklogo.com.png" alt="Thumbnail 11"></a>
+        </div>
+        <div class="thumbnail">
+          <a href="https://www.mercadolibre.com.mx/funko-pop-deluxe-alice-in-wonderland-alice-wflowers-1057/p/MLM24809840#searchVariation=MLM24809840&position=1&search_layout=grid&type=product&tracking_id=46c9059f-59ec-4457-8661-de249c312bd2
+          "><img src="../images/mercado-libre-logo-0233EC77C6-seeklogo.com.png" alt="Thumbnail 12"></a>
+        </div>
+      </div>
+    </div>
+    <div class="photo">
+      <h4>ANT MAN</h4>
+      <img src="../images/ANt man.png" alt="Photo 5">
+      <div class="thumbnails">
+        <div class="thumbnail">
+          <a href="https://www.amazon.com.mx/Funko-Pop-Marvel-Ant-Man-Quantumania/dp/B0B4Y3BM7D/ref=sr_1_1?__mk_es_MX=%C3%85M%C3%85%C5%BD%C3%95%C3%91&sr=8-1&ufe=app_do%3Aamzn1.fos.4e545b5e-1d45-498b-8193-a253464ffa47"><img src="../images/Amazon_icon.svg.webp" alt="Thumbnail 10"></a>
+        </div>
+        <div class="thumbnail">
+          <a href="https://www.ebay.com/itm/134403443859
+          "><img src="../images/ebay-icon-logo-EA65D4EEE0-seeklogo.com.png" alt="Thumbnail 11"></a>
+        </div>
+        <div class="thumbnail">
+          <a href="https://www.mercadolibre.com.mx/figura-de-accion-ant-man-1137-ant-man-and-the-wasp-quantumania-funko-pop/p/MLM22892467?pdp_filters=category:MLM37525#searchVariation=MLM22892467&position=1&search_layout=stack&type=product&tracking_id=b23bc7c5-7ad9-47d1-a3df-135b9e8ea1b4
+          "><img src="../images/mercado-libre-logo-0233EC77C6-seeklogo.com.png" alt="Thumbnail 12"></a>
+        </div>
+      </div>
+    </div>
+    <div class="photo">
+      <h4>AHSOKA</h4>
+      <img src="../images/ASOKA.png" alt="Photo 6">
+      <div class="thumbnails">
+        <div class="thumbnail">
+          <a href="https://www.amazon.com.mx/Funko-Mandalorian-Coleccionable-Keychain-Multicolor/dp/B08WC157YR/ref=sr_1_1?__mk_es_MX=%C3%85M%C3%85%C5%BD%C3%95%C3%91&sr=8-1&ufe=app_do%3Aamzn1.fos.4e545b5e-1d45-498b-8193-a253464ffa47"><img src="../images/Amazon_icon.svg.webp" alt="Thumbnail 10"></a>
+        </div>
+        <div class="thumbnail">
+          <a href="https://www.ebay.com/p/24061747223">
+            <img src="../images/ebay-icon-logo-EA65D4EEE0-seeklogo.com.png" alt="Thumbnail 11"></a>
+        </div>
+        <div class="thumbnail">
+          <a href="https://www.mercadolibre.com.mx/figura-de-accion-star-wars-ahsoka-de-funko-pop/p/MLM19547185?pdp_filters=item_id:MLM1932889809#is_advertising=true&searchVariation=MLM19547185&position=1&search_layout=stack&type=pad&tracking_id=6385da3a-810f-44ef-9758-f65c0cd67c1d&is_advertising=true&ad_domain=VQCATCORE_LST&ad_position=1&ad_click_id=NzE4NTIwNTktMWZhZi00YzUxLTlhMDUtNDEyZjE1ZWNlMmQy
+          "><img src="../images/mercado-libre-logo-0233EC77C6-seeklogo.com.png" alt="Thumbnail 12"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer id="footer-padre">
+    © 2024 Legend Collection. All rights reserved.
+  </footer>
+
+
+  <!-- Audio de fondo -->
+  <audio autoplay loop>
+    <source src="../audios/Grabación (6).mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+
+  
+   
+  </script>
+</body>
+</html>
+
+
